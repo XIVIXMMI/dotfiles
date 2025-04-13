@@ -22,6 +22,7 @@
         inherit system;
         modules = [
           ./hosts/thinkpad-x270.nix
+	  ./hardware/x270.nix
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

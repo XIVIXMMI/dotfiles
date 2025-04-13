@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ../hardware/x270.nix
     ../modules/system.nix
     ../modules/gnome.nix
     ../modules/development.nix
@@ -22,6 +23,7 @@
   
   # Enable power management features for laptop
   services.tlp.enable = true;
+  services.power-profiles-daemon.enable = false;
   services.thermald.enable = true;
 
   # Enable fingerprint reader if available

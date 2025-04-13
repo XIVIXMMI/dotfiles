@@ -4,12 +4,13 @@
   # Enable Docker
   virtualisation.docker = {
     enable = true;
-    
+    enableOnBoot = true;
+    autoPrune.enable = true;
     # Use overlay2 storage driver
-    storageDriver = "overlay2";
+    # storageDriver = "overlay2";
     
     # Configure Docker daemon options
-    extraOptions = "--data-root /var/lib/docker";
+    # extraOptions = "--data-root /var/lib/docker";
   };
   
   # Install Docker related tools

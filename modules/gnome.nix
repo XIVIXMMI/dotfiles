@@ -26,19 +26,19 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    gnome.gnome-tweaks
-    gnome.dconf-editor
-    gnome.adwaita-icon-theme
+    gnome-tweaks
+    dconf-editor
+    adwaita-icon-theme
     gnome-extension-manager
     
     # Additional GNOME applications
-    gnome.gnome-calendar
-    gnome.gnome-calculator
-    gnome.gnome-system-monitor
-    gnome.gnome-screenshot
-    gnome.gnome-terminal
-    gnome.eog            # Image viewer
-    gnome.evince         # Document viewer
+    gnome-calendar
+    gnome-calculator
+    gnome-system-monitor
+    gnome-screenshot
+    gnome-terminal
+    eog            # Image viewer
+    evince         # Document viewer
   ];
 
   # Enable GNOME keyring
