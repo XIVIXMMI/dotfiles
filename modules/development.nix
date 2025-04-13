@@ -35,7 +35,7 @@
     
     # Build tools
     autoconf
-    pkgconfig
+    pkg-config
     
     # DevOps tools
     docker-compose
