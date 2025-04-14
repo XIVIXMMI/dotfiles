@@ -27,8 +27,9 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.omori = import ./home/omori/home.nix;
-          }
+            home-manager.users.omori =  import ./home/omori/home.nix;
+	    home-manager.backupFileExtension = "backup";
+	  }
           nixos-hardware.nixosModules.lenovo-thinkpad-x270
         ];
       };

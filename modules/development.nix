@@ -25,8 +25,8 @@
     clang-tools
     
     # IDEs and editors
-    jetbrains.idea-community
-    vscode
+    # jetbrains.idea-community
+    # vscode
     
     # Development tools
     git

@@ -28,7 +28,7 @@
     
     # File managers
     file
-    gnome.nautilus
+    nautilus
   ];
 
   # Enable sound

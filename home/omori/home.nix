@@ -11,7 +11,7 @@
     wget
     curl
     git
-    neovim
+    #neovim
     neofetch
     ripgrep
     fd
@@ -28,8 +28,8 @@
     gdb
     
     # Browsers and apps
-    firefox
-    vscode
+    # firefox
+    # vscode
     
     # Communication
     discord

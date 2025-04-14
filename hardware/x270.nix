@@ -18,10 +18,21 @@
       fsType = "ext4";
     };
 
-  fileSystems."/boot" = {
+  fileSystems."/mnt/boot" = {
     device = "/dev/disk/by-uuid/49A5-2D68";  # REPLACE WITH ACTUAL UUID
     fsType = "vfat";
   };
+
+  boot.loader = {
+    systemd-boot = {
+      enable = true;
+      editor = false;
+    };
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/mnt/boot";  # Must match your mount point
+    };
+  }; 
 
   swapDevices = [ ];
 
@@ -34,5 +45,5 @@
   # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.intel.updateMicrocode = true;
 }

@@ -10,8 +10,8 @@
   ];
 
   # Hardware specific configuration
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.systemd-boot.enable = true;
+  # boot.loader.efi.canTouchEfiVariables = true;
   
   networking.hostName = "thinkpad-x270";
   networking.networkmanager.enable = true;

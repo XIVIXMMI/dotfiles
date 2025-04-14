@@ -12,10 +12,10 @@
   services.xserver.xkb.layout = "us";
 
   # Enable touchpad support
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 
   # Install GNOME applications
-  environment.gnome.excludePackages = with pkgs.gnome; [
+  environment.gnome.excludePackages = with pkgs; [
     epiphany    # Web browser
     totem       # Video player
     geary       # Email client
@@ -30,6 +30,7 @@
     dconf-editor
     adwaita-icon-theme
     gnome-extension-manager
+    nautilus
     
     # Additional GNOME applications
     gnome-calendar
