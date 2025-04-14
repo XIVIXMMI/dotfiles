@@ -7,6 +7,7 @@
 
   home.packages = with pkgs; [
     # Terminal utilities
+    alacritty
     htop
     wget
     curl
