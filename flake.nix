@@ -22,16 +22,20 @@
     {
       nixosConfigurations."thinkpad-x270" = nixpkgs.lib.nixosSystem {
         inherit system;
+	specialArgs = { inherit inputs; };
         modules = [
           ./hosts/thinkpad-x270.nix
 	  ./hardware/x270.nix
 	  hyprland.nixosModules.default
           home-manager.nixosModules.home-manager
           {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users.omori =  import ./home/omori/home.nix;
-	    home-manager.backupFileExtension = "backup";
+	    home-manager = {
+	      useGlobalPkgs = true;
+	      useUserPackages = true;
+	      users.omori =  import ./home/omori/home.nix;
+	      backupFileExtension = "backup";
+              extraSpecialArgs = { inherit inputs; };
+	    };
 	  }
           nixos-hardware.nixosModules.lenovo-thinkpad-x270
         ];

@@ -1,11 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
     ../hardware/x270.nix
     ../modules/system.nix
     ../modules/gnome.nix
-    ../modules/hyprland
+    ../modules/hyprland/default.nix
     ../modules/development.nix
     ../modules/docker.nix
   ];
@@ -62,8 +62,15 @@
   # User account
   users.users.omori = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "docker" ];
+    extraGroups = [ "wheel" "networkmanager" "docker" "video" ];
     shell = pkgs.bash;
+  };
+
+  #Hyprland
+  services.displayManager.defaultSession = "hyprland";
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
 
   # System settings

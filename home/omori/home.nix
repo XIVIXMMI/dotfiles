@@ -83,6 +83,15 @@
   # Allow Home Manager to manage itself
   programs.home-manager.enable = true;
 
+  # Hyprland
+  wayland.windowManager.hyprland.enable = true;
+
+  programs.waybar = {
+    enable = true;
+    # optional: set the package to waybar-hyprland
+    package = pkgs.waybar;
+  };
+
   # Let Home Manager install and manage fonts
   fonts.fontconfig.enable = true;
 }
