@@ -24,7 +24,6 @@
         inherit system;
         modules = [
           ./hosts/thinkpad-x270.nix
-	  ./home/omori/home.nix
 	  ./hardware/x270.nix
 	  hyprland.nixosModules.default
           home-manager.nixosModules.home-manager

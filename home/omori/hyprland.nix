@@ -1,4 +1,4 @@
-{ config, lib, pkgs, inputs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
   imports = [
@@ -292,7 +292,7 @@
     grim
     slurp
     wl-clipboard
-    alacritty # Make sure you have a Wayland-compatible terminal
+    alacritty
   ];
 
   # Create configuration files for other Hyprland-related tools
