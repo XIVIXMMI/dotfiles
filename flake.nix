@@ -10,9 +10,11 @@
     };
     
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, hyprland, ... }@inputs:
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
@@ -22,7 +24,9 @@
         inherit system;
         modules = [
           ./hosts/thinkpad-x270.nix
+	  ./home/omori/home.nix
 	  ./hardware/x270.nix
+	  hyprland.nixosModules.default
           home-manager.nixosModules.home-manager
           {
             home-manager.useGlobalPkgs = true;

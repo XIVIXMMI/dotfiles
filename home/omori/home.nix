@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
 
 {
+  imports = [ 
+    ./hyprland.nix
+  ];
+
   home.username = "omori";
   home.homeDirectory = "/home/omori";
   home.stateVersion = "24.11";
@@ -30,7 +34,7 @@
     
     # Browsers and apps
     # firefox
-    # vscode
+    vscode
     
     # Communication
     discord

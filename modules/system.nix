@@ -9,6 +9,8 @@
     curl
     git
     htop
+    btop
+    acpi
     neofetch
     
     # Archive tools
@@ -25,7 +27,7 @@
     lm_sensors
     iotop
     powertop
-    
+
     # File managers
     file
     nautilus
