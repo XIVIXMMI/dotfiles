@@ -48,7 +48,7 @@ return {
           light = "latte",
           dark = "mocha",
         },
-        transparent = true, -- use transparent background
+        transparent_background = true, -- use transparent background
         term_colors = true, -- set terminal colors
         dim_inactive = {
           enabled = false,
