@@ -5,7 +5,7 @@ local config = wezterm.config_builder()
 config.font = wezterm.font("Hack Nerd Font", {
 	weight = "Medium",
 })
-config.font_size = 15
+config.font_size = 14
 
 -- color scheme
 config.color_scheme = "Catppuccin Mocha"
