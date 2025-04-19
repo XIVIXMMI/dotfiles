@@ -127,11 +127,12 @@ alias ls='colorls'
 alias rm='rm -i'
 alias ss='source ~/.zshrc'
 alias oh='cd ~/ && echo "Went back home" '
-alias e='exit'
+alias q='exit'
 alias dc='docker-compose'
 
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
 
