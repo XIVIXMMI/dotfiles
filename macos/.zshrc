@@ -129,7 +129,7 @@ alias ss='source ~/.zshrc'
 alias oh='cd ~/ && echo "Went back home" '
 alias q='exit'
 alias dc='docker-compose'
-
+alias t='tmux'
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
