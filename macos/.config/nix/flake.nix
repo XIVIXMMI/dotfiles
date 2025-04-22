@@ -38,6 +38,8 @@
            # "Yoink" = 457622435; 
           };
           onActivation.cleanup = "none"; # "zap" 
+          onActivation.autoUpdate = true;
+          onActivation.upgrade = true;
         };
 
       # Fonts config
@@ -83,6 +85,26 @@
           fi
         done
       '';
+
+      # System defaults settings 
+      # system.defaults = {
+      #   dock.autohide = true;
+      #   dock.persistent-apps = [
+      #     "/System/Applications/Music.app"
+      #     "/System/Applications/Mail.app"
+      #     "/System/Applications/System Settings.app"
+      #     "/System/Applications/Calendar.app"
+      #     "/System/Applications/Firefox.app"
+      #     "${pkgs.wezterm}/Applications/WezTerm.app"
+      #     "${pkgs.utm}/Applications/UTM.app"
+      #     "${pkgs.obsidian}/Applications/Obsidian.app"
+      #   ]
+      #   finder.FXPreferredViewStyle = "clmv";
+      #   loginwindow.GuestEnabled = false;
+      #   NSGlobalDomain.AppleICUForce24HourTime = true;
+      #   NSGlobalDomain.AppleInterfaceStyle = "Dark";
+      #   NSGlobalDomain.KeyRepeat = 2;
+      # };
 
       # Necessary for using flakes on this system.
       nix.settings.experimental-features = "nix-command flakes";
