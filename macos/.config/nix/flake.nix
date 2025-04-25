@@ -29,10 +29,25 @@
           enable = true;
           brews = [
             "mas"
+            "docker"
           ];
           casks = [
             # "GUI app you want to install"
-            "firefox"
+            # "firefox"
+            # "wezterm"
+            # "alacritty"
+            # "rectangle"
+            # "discord"
+            # "telegram-desktop"
+            # "firefox"
+            # "visual-studio-code"
+            # "obsidian"
+            # "keka"
+            # "utm"
+            # "dbeaver-community"
+            # "postman"
+            # "cloudflare-warp"
+            # "mongodb-compass"
           ];
           masApps = {
            # "Yoink" = 457622435; 
@@ -47,27 +62,6 @@
       #   [
       #     (pkgs.nerdfonts.override { fonts = ["JetBrainsMono"]; })
       #   ];
-
-      # Solve the error of the spotlight for macOS 
-      # system.activationScripts.applications.text = let 
-      #   env = pkgs.buildEnv {
-      #       name = "system-applications";
-      #       paths = config.environment.systemPackages;
-      #       pathsToLink = "/Applications/";
-      #     };
-      # in 
-      #   pkgs.lib.mkForce ''
-      #     # Set up applications.
-      #     echo "setting up /Applications..." >&2
-      #     rm -rf /Applications/Nix\ Apps
-      #     mkdir -p /Applications/Nix\ Apps
-      #     find ${env}/Applications -maxdepth 1 -type l -exec readlink '{}' + | 
-      #     while read src; do
-      #       app_name=$(basename "$src")
-      #       echo "coppying $src" >&2
-      #       ${pkgs.mkalias}/bin/mkalias "$src" "/Applications/Nix Apps/$app_name"
-      #     done 
-      #   '';
 
       system.activationScripts.applications.text = pkgs.lib.mkForce ''
         echo "Setting up /Applications/Nix Apps..." >&2
@@ -86,7 +80,8 @@
         done
       '';
 
-      # System defaults settings 
+
+      # # System defaults settings 
       # system.defaults = {
       #   dock.autohide = true;
       #   dock.persistent-apps = [
@@ -95,12 +90,52 @@
       #     "/System/Applications/System Settings.app"
       #     "/System/Applications/Calendar.app"
       #     "/System/Applications/Firefox.app"
-      #     "${pkgs.wezterm}/Applications/WezTerm.app"
-      #     "${pkgs.utm}/Applications/UTM.app"
-      #     "${pkgs.obsidian}/Applications/Obsidian.app"
+      #     "/System/Applications/WezTerm.app"
+      #     "/System/Applications/UTM.app"
+      #     "/System/Applications/Obsidian.app"
+      #     "/System/Applications/Docker Desktop.app"
       #   ]
       #   finder.FXPreferredViewStyle = "clmv";
+      #   finder = {
+      #       ShowPathBar = true;
+      #       ShowPreviewPane = true;
+      #       ShowExternalHardDrivesOnDesktop = true;
+      #       ShowHardDrivesOnDesktop = false;
+      #       ShowRemovableMediaOnDesktop = true;
+      #       ShowSidebar = true;
+      #       ShowStatusBar = true;
+      #     };
+      #   trackpad = {
+      #       Clicking = true;
+      #       TrackpadRightClick = true;
+      #       TrackpadThreeFingerDrag = true;
+      #       ActuateDetents = true;
+      #       FirstClickThreshold = 1;
+      #       SecondClickThreshold = 1;
+      #       TrackpadScroll = true;
+      #       TrackpadHorizScroll = true;
+      #       TrackpadMomentumScroll = true;
+      #       TrackpadPinch = true;
+      #       TrackpadRotate = true;
+      #       TrackpadHandResting = true;
+      #       TrackpadCornerSecondaryClick = 0;
+      #       TrackpadFiveFingerPinchGesture = 2;
+      #       TrackpadFourFingerHorizSwipeGesture = 2;
+      #       TrackpadFourFingerPinchGesture = 2;
+      #       TrackpadFourFingerVertSwipeGesture = 2;
+      #       TrackpadThreeFingerHorizSwipeGesture = 0;
+      #       TrackpadThreeFingerTapGesture = 0;
+      #       TrackpadThreeFingerVertSwipeGesture = 0;
+      #       TrackpadTwoFingerDoubleTapGesture = 1;
+      #       TrackpadTwoFingerFromRightEdgeSwipeGesture = 3;
+      #       DragLock = false;
+      #       Dragging = false;
+      #     };
       #   loginwindow.GuestEnabled = false;
+      #   NSGlobalDomain = {
+      #       "com.apple.trackpad.forceClick" = true;
+      #       "com.apple.trackpad.scaling" = 1.0;
+      #     };
       #   NSGlobalDomain.AppleICUForce24HourTime = true;
       #   NSGlobalDomain.AppleInterfaceStyle = "Dark";
       #   NSGlobalDomain.KeyRepeat = 2;
