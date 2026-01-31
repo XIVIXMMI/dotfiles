@@ -1,2 +1,2 @@
-# dotfiles config
+## dotfiles config
 my NixOS && MacOS configuration 
