@@ -34,7 +34,7 @@ config.window_padding = {
 
 -- window-size config
 config.initial_cols = 160 -- characters wide
-config.initial_rows = 50 -- lines tall
+config.initial_rows = 53 -- lines tall
 
 -- Center window on startup
 wezterm.on("gui-startup", function(cmd)
