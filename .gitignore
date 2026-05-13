@@ -1,3 +1,16 @@
 *.swp
 *.log
-DS_Store
+.DS_Store
+
+# SSH keys — never commit, only ssh/config is safe
+ssh/.ssh/id_*
+ssh/.ssh/*.pem
+ssh/.ssh/known_hosts
+
+# gh CLI auth token
+gh/.config/gh/hosts.yml
+
+# Secrets
+.env
+*.secret
+.cargo/credentials.toml
