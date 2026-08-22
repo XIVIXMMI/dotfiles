@@ -1,0 +1,10 @@
+[credential]
+	helper = store
+
+[includeIf "gitdir:~/WorkSpace/Company/"]
+	path = ~/.gitconfig-company
+
+[includeIf "gitdir:~/WorkSpace/Personal/"]
+	path = ~/.gitconfig-personal
+[core]
+	editor = vim
