@@ -1,41 +1,41 @@
 #!/bin/bash
-# Tên file: ~/dotfiles/add-configs.sh
+# File: ~/dotfiles/add-configs.sh
 
-# Kiểm tra tham số đầu vào
+# Check input arguments
 if [ $# -lt 1 ]; then
-  echo "Sử dụng: $0 <đường_dẫn_file_config1> [<đường_dẫn_file_config2> ...]"
+  echo "Usage: $0 <config_file_path1> [<config_file_path2> ...]"
   exit 1
 fi
 
 STOW_DIR="$HOME/dotfiles/macos"
 
-# Xử lý từng file cấu hình
+# Process each config file
 for CONFIG_PATH in "$@"; do
-  echo "Đang xử lý: $CONFIG_PATH"
+  echo "Processing: $CONFIG_PATH"
 
-  # Kiểm tra file tồn tại
+  # Check the file exists
   if [ ! -e "$CONFIG_PATH" ]; then
-    echo "Cảnh báo: $CONFIG_PATH không tồn tại, bỏ qua."
+    echo "Warning: $CONFIG_PATH does not exist, skipping."
     continue
   fi
 
-  # Đường dẫn tương đối từ $HOME
+  # Path relative to $HOME
   REL_PATH="${CONFIG_PATH/#$HOME\//}"
 
-  # Tạo thư mục đích trong thư mục stow
+  # Create the destination directory inside the stow directory
   mkdir -p "$STOW_DIR/$(dirname "$REL_PATH")"
 
-  # Copy file vào thư mục stow
+  # Copy the file into the stow directory
   cp -r "$CONFIG_PATH" "$STOW_DIR/$REL_PATH"
 
-  # Backup file cấu hình gốc
+  # Back up the original config file
   mv "$CONFIG_PATH" "$CONFIG_PATH.bak"
 
-  echo "✓ Đã thêm $CONFIG_PATH vào stow."
+  echo "✓ Added $CONFIG_PATH to stow."
 done
 
-# Restow tất cả
+# Restow everything
 cd "$HOME/dotfiles"
 stow -R -t ~ macos
 
-echo "Hoàn tất! Đã tạo symlinks cho tất cả các file cấu hình."
+echo "Done! Symlinks created for all config files."
