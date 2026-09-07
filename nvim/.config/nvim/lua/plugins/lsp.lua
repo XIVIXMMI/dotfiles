@@ -4,7 +4,7 @@ return {
     "saghen/blink.cmp",
     version = "*",
     opts = {
-      keymap = { preset = "default" },
+      keymap = { preset = "super-tab" },
       appearance = { nerd_font_variant = "mono" },
       sources = { default = { "lsp", "path", "snippets", "buffer" } },
     },
@@ -13,6 +13,7 @@ return {
   {
     "neovim/nvim-lspconfig",
     dependencies = { "saghen/blink.cmp" },
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       local lspconfig = require("lspconfig")
       local caps = require("blink.cmp").get_lsp_capabilities()
